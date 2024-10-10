@@ -1,0 +1,40 @@
+package curriculo;
+
+import java.util.*;
+
+public class jogodeadivinhacao {
+
+	public static void main(String[] args) {
+	
+
+		Scanner s = new Scanner(System.in);
+        Random r = new Random();
+
+      
+        int na = r.nextInt(100) + 1;
+        int tentativas = 0;
+        int palpite = 0;
+        boolean acertou = false;
+
+        System.out.println("Bem-vindo ao Jogo de Adivinhação!");
+        System.out.println("Eu escolhi um número entre 1 e 100. Tente adivinhar!");
+
+        
+        while (!acertou) {
+            System.out.print("Digite seu palpite: ");
+            palpite = s.nextInt();
+            tentativas++;
+
+            if (palpite == na) {
+                acertou = true;
+                System.out.println("Parabéns! Você acertou o número em " + tentativas + " tentativas!");
+            } else if (palpite > na) {
+                System.out.println("Muito alto! Tente novamente.");
+            } else {
+                System.out.println("Muito baixo! Tente novamente.");
+            }
+        }
+
+        s.close();
+    }
+}
