@@ -1,0 +1,51 @@
+package curriculo;
+
+import java.util.*;
+
+public class calculadora {
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        System.out.println("Escolha a operação:");
+        System.out.println("1 - Soma");
+        System.out.println("2 - Subtração");
+        System.out.println("3 - Multiplicação");
+        System.out.println("4 - Divisão");
+
+        int a = s.nextInt(); 
+
+        
+        System.out.println("Digite seu primeiro número:");
+        double nota1 = s.nextDouble();
+
+        System.out.println("Digite seu segundo número:");
+        double nota2 = s.nextDouble();
+
+        double resposta = 0;
+
+        
+        if (a == 1) {
+            resposta = nota1 + nota2;
+            System.out.println("Resultado: " + resposta);
+        } else if (a == 2) {
+            resposta = nota1 - nota2;
+            System.out.println("Resultado: " + resposta);
+        } else if (a == 3) {
+            resposta = nota1 * nota2;
+            System.out.println("Resultado: " + resposta);
+        } else if (a == 4) {
+            if (nota2 != 0) {
+                resposta = nota1 / nota2;
+                System.out.println("Resultado: " + resposta);
+            } else {
+                System.out.println("Erro: Divisão por zero não é permitida");
+            }
+        } else {
+            System.out.println("Escolha inválida");
+        }
+
+        s.close();
+    }
+}
+	
